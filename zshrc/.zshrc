@@ -1,4 +1,4 @@
-export ZSH="/home/eduardomartines/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 ZSH_THEME="spaceship-prompt/spaceship"
 
@@ -7,18 +7,6 @@ CASE_SENSITIVE="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-export LANG=en_US.UTF-8
-export EDITOR='vim'
-export ARCHFLAGS="-arch x86_64"
-export PATH="$(yarn global bin):$PATH"
-export ANDROID_HOME=/opt/android-sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
-
-alias zshconfig="${EDITOR} ~/.zshrc"
-alias ohmyzsh="${EDITOR} ~/.oh-my-zsh/oh-my-zsh.sh"
-alias la="ls -la"
-alias p="cd ~/Projects"
 
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
@@ -37,3 +25,10 @@ SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
+
+export EDITOR='vim'
+
+alias zshconfig="${EDITOR} ~/.zshrc"
+alias ohmyzsh="${EDITOR} ~/.oh-my-zsh/oh-my-zsh.sh"
+alias la="ls -la"
+alias p="cd ~/projects"

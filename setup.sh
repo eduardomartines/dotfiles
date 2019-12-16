@@ -8,8 +8,6 @@ base=(
 system=(
 	i3
 	polybar
-	xinitrc
-	xresources
 )
 
 code=(
