@@ -73,7 +73,7 @@ code --install-extension ms-python.python
 # vim
 sudo apt install -y vim
 
-# communication
+# discord
 sudo snap install --classic discord
 
 # dotfiles
@@ -89,6 +89,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 nvm install v13.3.0
 nvm alias default node
 
+# yarn
+npm install -g yarn
+
 # rbenv ruby
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -101,4 +104,3 @@ sudo apt install -y python3-venv
 
 # clean
 sudo apt autoremove -y
-

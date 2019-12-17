@@ -22,7 +22,7 @@ SPACESHIP_CHAR_SUFFIX=" "
 
 CASE_SENSITIVE="true"
 
-plugins=(tmux tmuxinator git nvm virtualenv rbenv docker docker-compose)
+plugins=(git tmux tmuxinator nvm yarn virtualenv rbenv docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,9 +38,13 @@ eval "$(rbenv init -)"
 # text editor
 export EDITOR='vim'
 
+# yarn
+export PATH="$PATH:$(yarn global bin)"
+
 # dotfiles
 alias zshconfig="${EDITOR} ~/.zshrc"
 alias ohmyzsh="${EDITOR} ~/.oh-my-zsh/oh-my-zsh.sh"
+alias reload="source ~/.zshrc"
 
 # system
 alias la="ls -la"
