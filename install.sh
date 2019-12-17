@@ -3,12 +3,14 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # browser
-sudo apt install chromium-browser -y
+sudo apt purge -y firefox
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+# TODO: install LAST PASS plugin
 
 # ssh
 ssh-keygen
 cat ~/.ssh/id_rsa.pub
-# TODO: install LAST PASS plugin
 # TODO: add ssh on Github and Bitbucket
 
 # TODO: necessary?
@@ -57,8 +59,18 @@ sudo ubuntu-drivers autoinstall
 sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt install -y alacritty
 
-# text editors
+# tmux
+sudo apt install -y tmux
+
+# tmuxinator
+gem install --no-document tmuxinator
+
+# visual studio Code
 sudo snap install --classic code
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-python.python
+
+# vim
 sudo apt install -y vim
 
 # communication
@@ -82,6 +94,7 @@ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 sudo apt-get install -y libssl-dev libreadline-dev
 rbenv install 2.6.5
+rbenv global 2.6.5
 
 # python venv
 sudo apt install -y python3-venv

@@ -22,7 +22,7 @@ SPACESHIP_CHAR_SUFFIX=" "
 
 CASE_SENSITIVE="true"
 
-plugins=(git nvm virtualenv rbenv docker docker-compose)
+plugins=(tmux tmuxinator git nvm virtualenv rbenv docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -12,6 +12,7 @@ system=(
 
 code=(
 	alacritty
+	gemrc
 )
 
 apps=( "${base[@]}" "${system[@]}" "${code[@]}" )
