@@ -8,6 +8,7 @@ base=(
 system=(
 	i3
 	polybar
+	rofi
 )
 
 code=(
