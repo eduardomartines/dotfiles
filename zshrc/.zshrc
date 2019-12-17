@@ -2,12 +2,6 @@ export ZSH="${HOME}/.oh-my-zsh"
 
 ZSH_THEME="spaceship-prompt/spaceship"
 
-CASE_SENSITIVE="true"
-
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
@@ -26,9 +20,30 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
 
+CASE_SENSITIVE="true"
+
+plugins=(git nvm virtualenv rbenv docker docker-compose)
+
+source $ZSH/oh-my-zsh.sh
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# text editor
 export EDITOR='vim'
 
+# dotfiles
 alias zshconfig="${EDITOR} ~/.zshrc"
 alias ohmyzsh="${EDITOR} ~/.oh-my-zsh/oh-my-zsh.sh"
+
+# system
 alias la="ls -la"
+
+# projects
 alias p="cd ~/projects"
