@@ -14,6 +14,7 @@ system=(
 code=(
 	alacritty
 	gemrc
+	vscode
 )
 
 apps=( "${base[@]}" "${system[@]}" "${code[@]}" )

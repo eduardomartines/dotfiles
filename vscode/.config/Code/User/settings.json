@@ -1,0 +1,26 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Atom One Light",
+    "workbench.editor.highlightModifiedTabs": true,
+
+    "explorer.sortOrder": "type",
+
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+
+    "window.zoomLevel": 0,
+
+    // "editor.letterSpacing": 0.2,
+    // "editor.lineHeight": 24,
+    "editor.fontFamily": "Iosevka",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.minimap.enabled": false,
+}

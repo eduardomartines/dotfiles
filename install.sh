@@ -51,6 +51,13 @@ sudo apt install -y git
 git config --global user.email "martines.eduardo@gmail.com"
 git config --global user.name "Eduardo Martines"
 
+# gitui
+cd /tmp
+wget https://github.com/extrawurst/gitui/releases/download/v0.10.1/gitui-linux-musl.tar.gz
+mkdir gitui-musl
+tar -zxvf gitui-linux-musl.tar.gz -C gitui-musl
+mv gitui-musl/gitui /usr/local/bin/
+
 # docker
 sudo snap install --classic docker
 sudo groupadd docker
@@ -152,6 +159,23 @@ gem install tmuxinator
 
 # python venv
 sudo apt install -y python3-venv
+
+# firacode font
+sudo apt install -y fonts-firacode
+
+# iosevka font
+cd /tmp
+wget https://github.com/be5invis/Iosevka/releases/download/v3.6.3/ttf-iosevka-3.6.3.zip
+unzip ttf-iosevka-3.6.3.zip -d iosevka
+mv iosevka/ttf /usr/local/share/fonts/iosevka
+sudo fc-cache -fv
+
+# iosevka-term font
+cd /tmp
+wget https://github.com/be5invis/Iosevka/releases/download/v3.6.3/ttf-iosevka-term-3.6.3.zip
+unzip ttf-iosevka-term-3.6.3.zip -d iosevka-term
+mv iosevka-term/ttf /usr/local/share/fonts/iosevka-term
+sudo fc-cache -fv
 
 # cleanup
 sudo apt autoremove -y
