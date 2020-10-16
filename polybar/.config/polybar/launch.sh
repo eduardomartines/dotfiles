@@ -4,13 +4,13 @@ echo ""
 echo "Polybar is starting"
 
 # kill
-killall -q polybar
+killall -q polybar-git
 
 # wait
-while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
+while pgrep -u $UID -x polybar-git > /dev/null; do sleep 1; done
 
 # start
-polybar default &
+polybar-git default -c ~/.config/polybar/config &
 
 echo ""
 echo "Polybar is launched."
