@@ -88,8 +88,20 @@ sudo apt install -y rofi
 # sudo ubuntu-drivers autoinstall
 
 # terminal
+cd /tmp
+git clone https://github.com/jwilm/alacritty
+cd alacritty
 sudo apt install -y cargo
-cargo install alacritty
+cargo build --release
+sudo cp target/release/alacritty /usr/local/bin
+# launcher
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+sudo desktop-file-install extra/linux/Alacritty.desktop
+sudo update-desktop-database
+# change defaults
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
+sudo gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
+
 
 # tmux
 sudo apt install -y tmux
