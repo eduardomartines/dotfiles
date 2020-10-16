@@ -7,7 +7,8 @@ wget -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.9/amd64/linux-image-un
 wget -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.9/amd64/linux-modules-5.9.0-050900-generic_5.9.0-050900.202010112230_amd64.deb
 sudo dpkg -i *.deb
 reboot
-# MANUAL STEPs: login
+# MANUAL STEPs:
+#   * login
 
 #
 # nvidia driver
@@ -43,7 +44,7 @@ cat ~/.ssh/id_rsa.pub
 #   * add ssh on Github (https://github.com/settings/keys) and Bitbucket
 
 # some tools
-sudo apt install -y apt-transport-https ca-certificates curl software-properties-common cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 
 # git
 sudo apt install -y git
@@ -87,7 +88,8 @@ sudo apt install -y rofi
 # sudo ubuntu-drivers autoinstall
 
 # terminal
-sudo snap install alacritty --classic
+sudo apt install -y cargo
+cargo install alacritty
 
 # tmux
 sudo apt install -y tmux
@@ -115,7 +117,7 @@ cd dotfiles
 #rm ~/.oh-my-zsh/oh-my-zsh.sh
 ./setup.sh
 gnome-session-quit --no-prompt
-# MANUAL STEP: 
+# MANUAL STEPs:
 #   * change settings to i3
 #   * login
 

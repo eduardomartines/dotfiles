@@ -41,6 +41,9 @@ export EDITOR='vim'
 # yarn
 export PATH="$PATH:$(yarn global bin)"
 
+# cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # dotfiles
 alias zshconfig="${EDITOR} ~/.zshrc"
 alias ohmyzsh="${EDITOR} ~/.oh-my-zsh/oh-my-zsh.sh"
