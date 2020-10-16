@@ -102,7 +102,6 @@ sudo update-desktop-database
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
 sudo gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
 
-
 # tmux
 sudo apt install -y tmux
 
@@ -111,6 +110,8 @@ sudo snap install --classic code
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-python.python
 code --install-extension eamodio.gitlens
+code --installer-extension pkief.material-icon-theme
+code --installer-extension akamud.vscode-theme-onelight
 
 # vim
 sudo apt install -y vim
