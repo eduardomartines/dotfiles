@@ -90,6 +90,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Define outputs
+set $output-primary "DP-0"
+set $output-secondary "HDMI-0"
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -115,6 +119,17 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+bindsym F1 workspace number $ws1
+bindsym F2 workspace number $ws2
+bindsym F3 workspace number $ws3
+bindsym F4 workspace number $ws4
+bindsym F5 workspace number $ws5
+bindsym F6 workspace number $ws6
+bindsym F7 workspace number $ws7
+bindsym F8 workspace number $ws8
+bindsym F9 workspace number $ws9
+bindsym F0 workspace number $ws10
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -126,6 +141,15 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+workspace 1 output $output-primary
+workspace 2 output $output-primary
+workspace 3 output $output-primary
+workspace 4 output $output-primary
+workspace 5 output $output-secondary
+workspace 6 output $output-secondary
+workspace 7 output $output-secondary
+workspace 8 output $output-secondary
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -164,6 +188,17 @@ bindsym $mod+r mode "resize"
 # hide window title bar
 for_window [class="^.*"] border pixel 1
 new_window 1pixel
+
+# Media volume controls
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '5%+'"
+bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '5%-'"
+bindsym XF86AudioMute exec "amixer -D pulse set Master toggle"
+
+# Media controls
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 
 # i3-gaps
 smart_gaps on

@@ -35,6 +35,8 @@ rm -rf google-chrome-stable_current_amd64.deb
 # 	* install LAST PASS plugin
 # 	* sign in and sync with Google Account
 #	* go to "chrome://settings/system" and make sure the following option is disabled "Use hardware acceleration when available" to prevent system crash
+#   * go to "chrome://flags/#hardware-media-key-handling" and make sure the following option is disabled "Hardware Media Key Handling" to prevent issues with media keys
+#   * relaunch Chrome
 sudo apt purge -y firefox
 
 # ssh
@@ -86,7 +88,8 @@ cd i3-gaps
 autoreconf --force --install && rm -rf build/ && mkdir -p build && cd build/ && ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers && make && sudo make install
 
 # polybar
-sudo snap install polybar-git --edge --devmode
+# sudo snap install polybar-git --edge --devmode
+# please follow instructions from here: https://github.com/polybar/polybar#building-from-source
 
 # rofi
 sudo apt install -y rofi
@@ -176,6 +179,9 @@ wget https://github.com/be5invis/Iosevka/releases/download/v3.6.3/ttf-iosevka-te
 unzip ttf-iosevka-term-3.6.3.zip -d iosevka-term
 mv iosevka-term/ttf /usr/local/share/fonts/iosevka-term
 sudo fc-cache -fv
+
+# spotify
+sudo snap install spotify
 
 # cleanup
 sudo apt autoremove -y

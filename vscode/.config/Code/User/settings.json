@@ -14,7 +14,7 @@
     // "editor.letterSpacing": 0.2,
     // "editor.lineHeight": 24,
     "editor.fontFamily": "Iosevka",
-    "editor.fontSize": 16,
+    "editor.fontSize": 18,
     "editor.fontLigatures": true,
     "editor.formatOnPaste": true,
     "editor.cursorStyle": "block",
