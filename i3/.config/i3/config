@@ -149,10 +149,12 @@ workspace 1 output $output-primary
 workspace 2 output $output-primary
 workspace 3 output $output-primary
 workspace 4 output $output-primary
-workspace 5 output $output-secondary
+workspace 5 output $output-primary
 workspace 6 output $output-secondary
 workspace 7 output $output-secondary
 workspace 8 output $output-secondary
+workspace 9 output $output-secondary
+workspace 10 output $output-secondary
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
