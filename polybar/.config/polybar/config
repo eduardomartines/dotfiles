@@ -140,7 +140,7 @@ type = custom/script
 interval = 1
 format-prefix = " "
 format = <label>
-exec = python ./custom-scripts/spotify_status.py -f '{play_pause} {artist}: {song}'
+exec = python $HOME/.config/polybar/custom-scripts/spotify_status.py -f '{play_pause} {artist}: {song}'
 format-underline = #1db954
 
 [module/cpu]
