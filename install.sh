@@ -122,6 +122,7 @@ code --install-extension ms-python.python
 code --install-extension eamodio.gitlens
 code --installer-extension pkief.material-icon-theme
 code --installer-extension akamud.vscode-theme-onelight
+code --installer-extension lourenci.go-to-spec
 
 # vim
 sudo apt install -y vim
