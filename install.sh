@@ -61,12 +61,13 @@ tar -zxvf gitui-linux-musl.tar.gz -C gitui-musl
 mv gitui-musl/gitui /usr/local/bin/
 
 # docker
-sudo snap install --classic docker
-sudo groupadd docker
-sudo chown root:docker /var/run/docker.sock
-sudo usermod -aG docker $USER
-newgrp docker
-reboot
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install -y docker-ce
+sudo usermod -aG docker ${USER}
+su - ${USER}
 # MANUAL STEPs:
 #	* loing
 #	* test with com "docker run hello-world"
