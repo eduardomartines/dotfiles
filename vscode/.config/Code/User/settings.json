@@ -13,6 +13,8 @@
 
     // "editor.letterSpacing": 0.2,
     // "editor.lineHeight": 24,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
     "editor.fontFamily": "Iosevka",
     "editor.fontSize": 19,
     "editor.fontLigatures": true,
