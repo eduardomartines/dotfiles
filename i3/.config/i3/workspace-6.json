@@ -1,0 +1,22 @@
+{
+  "border": "pixel",
+  "current_border_width": 2,
+  "floating": "auto_off",
+  "geometry": {
+    "height": 600,
+    "width": 800,
+    "x": 0,
+    "y": 0
+  },
+  "marks": [],
+  "name": "Terminal",
+  "percent": 1,
+  "swallows": [
+    {
+      "class": "^Alacritty$",
+      "instance": "^Alacritty$",
+      "title": "^General$"
+    }
+  ],
+  "type": "con"
+}

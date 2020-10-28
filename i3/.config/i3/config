@@ -35,7 +35,10 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty -e tmux
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
+
+# kill all windows
+bindsym $mod+Shift+q [class=".*"] kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -137,14 +140,14 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 
-workspace 1 output $output-primary
-workspace 2 output $output-primary
-workspace 3 output $output-primary
-workspace 4 output $output-primary
-#workspace 5 output $output-secondary
-workspace 6 output $output-secondary
-workspace 7 output $output-secondary
-workspace 8 output $output-secondary
+workspace $ws1 output $output-primary
+workspace $ws2 output $output-primary
+workspace $ws3 output $output-primary
+workspace $ws4 output $output-primary
+#workspace $ws5 output $output-secondary
+workspace $ws6 output $output-secondary
+workspace $ws7 output $output-secondary
+workspace $ws8 output $output-secondary
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -199,3 +202,12 @@ bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 smart_gaps on
 gaps inner 1
 gaps outer 1
+
+exec_always --no-startup-id i3-msg "workspace $ws1; append_layout $HOME/.config/i3/workspace-1.json; exec code"
+exec_always --no-startup-id i3-msg "workspace $ws2; append_layout $HOME/.config/i3/workspace-2.json; exec alacritty -t GitUI"
+exec_always --no-startup-id i3-msg "workspace $ws3; append_layout $HOME/.config/i3/workspace-3.json; exec google-chrome --profile-directory='Default'"
+exec_always --no-startup-id i3-msg "workspace $ws6; append_layout $HOME/.config/i3/workspace-6.json; exec alacritty -t General -e tmux"
+exec_always --no-startup-id i3-msg "workspace $ws7; append_layout $HOME/.config/i3/workspace-7.json; exec google-chrome --profile-directory='Default'; exec google-chrome --profile-directory='Profile 1'"
+exec_always --no-startup-id i3-msg "workspace $ws8; append_layout $HOME/.config/i3/workspace-8.json; exec spotify"
+
+exec_always --no-startup-id i3-msg "workspace $ws6; workspace $ws1"
