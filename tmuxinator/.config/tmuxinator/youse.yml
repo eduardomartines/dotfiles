@@ -1,0 +1,9 @@
+name: youse
+root: ~/Projects/youse
+
+windows:
+  - terminal:
+      layout: main-horizontal
+      panes:
+        - docker-compose run -p 3000:3000 app bin/rails s -b '0.0.0.0'
+        - watch -g docker ps -q --filter="NAME=youse_app_run"; docker exec -it $(docker ps -q --filter="NAME=youse_app_run") bash

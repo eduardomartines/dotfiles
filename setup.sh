@@ -15,6 +15,7 @@ code=(
 	alacritty
 	gemrc
 	vscode
+	tmuxinator
 )
 
 apps=( "${base[@]}" "${system[@]}" "${code[@]}" )
