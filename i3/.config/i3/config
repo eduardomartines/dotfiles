@@ -32,7 +32,7 @@ exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle' -layout us
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e tmux
+bindsym $mod+Return exec alacritty -e tmux -f ~/.config/tmux/tmux.conf
 
 # kill focused window
 bindsym $mod+q kill
@@ -206,7 +206,7 @@ gaps outer 1
 exec_always --no-startup-id i3-msg "workspace $ws1; append_layout $HOME/.config/i3/workspace-1.json; exec code"
 exec_always --no-startup-id i3-msg "workspace $ws2; append_layout $HOME/.config/i3/workspace-2.json; exec alacritty -t GitUI"
 exec_always --no-startup-id i3-msg "workspace $ws3; append_layout $HOME/.config/i3/workspace-3.json; exec google-chrome --profile-directory='Default'"
-exec_always --no-startup-id i3-msg "workspace $ws6; append_layout $HOME/.config/i3/workspace-6.json; exec alacritty -t General -e tmux"
+exec_always --no-startup-id i3-msg "workspace $ws6; append_layout $HOME/.config/i3/workspace-6.json; exec alacritty -t General -e tmux -f ~/.config/tmux/tmux.conf"
 exec_always --no-startup-id i3-msg "workspace $ws7; append_layout $HOME/.config/i3/workspace-7.json; exec google-chrome --profile-directory='Default'; exec google-chrome --profile-directory='Profile 1'"
 exec_always --no-startup-id i3-msg "workspace $ws8; append_layout $HOME/.config/i3/workspace-8.json; exec spotify"
 

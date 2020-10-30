@@ -43,6 +43,9 @@ plugins=(git tmux tmuxinator nvm yarn virtualenv rbenv docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
+export XDG_CONFIG_HOME="$HOME/.config"
+export TMUX_PLUGIN_MANAGER_PATH="$XDG_CONFIG_HOME/tmux/plugins"
+
 #
 # nvm
 #
@@ -59,7 +62,7 @@ eval "$(rbenv init -)"
 #
 # text editor
 #
-export EDITOR='vim'
+export EDITOR="vim"
 
 #
 # yarn
@@ -81,23 +84,24 @@ alias reload="source ~/.zshrc"
 
 alias la="ls -la"
 
+alias tmux="tmux -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
 alias p='f() { cd ~/projects/$1 };f'
 alias dotfiles="p dotfiles"
 
 #
 # aliases from tmuxinator plugin
 #
-# alias ta='tmux attach -t'
-# alias tad='tmux attach -d -t'
-# alias ts='tmux new-session -s'
-# alias tl='tmux list-sessions'
-# alias tksv='tmux kill-server'
-# alias tkss='tmux kill-session -t'
+# alias ta="tmux attach -t"
+# alias tad="tmux attach -d -t"
+# alias ts="tmux new-session -s"
+# alias tl="tmux list-sessions"
+# alias tksv="tmux kill-server"
+# alias tkss="tmux kill-session -t"
 
 #
 # aliases from tmuxinator plugin
 #
-# alias txs='tmuxinator start'
-# alias txo='tmuxinator open'
-# alias txn='tmuxinator new'
-# alias txl='tmuxinator list'
+# alias txs="tmuxinator start"
+# alias txo="tmuxinator open"
+# alias txn="tmuxinator new"
+# alias txl="tmuxinator list"

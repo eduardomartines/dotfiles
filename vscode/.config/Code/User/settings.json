@@ -25,4 +25,9 @@
     "editor.renderWhitespace": "boundary",
     "editor.acceptSuggestionOnEnter": "off",
     "editor.minimap.enabled": false,
+
+    "colorize.include": [
+        "**/*.yml",
+        "**/*.conf"
+    ]
 }
