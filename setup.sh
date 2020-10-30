@@ -15,6 +15,7 @@ code=(
 	alacritty
 	gemrc
 	vscode
+	tmux
 	tmuxinator
 )
 

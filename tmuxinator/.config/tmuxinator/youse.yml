@@ -1,9 +1,17 @@
 name: youse
 root: ~/Projects/youse
+startup_window: 1
+startup_pane: 3
+on_project_stop: docker-compose down
 
 windows:
-  - terminal:
-      layout: main-horizontal
+  - ~:
+      layout: tiled
       panes:
-        - docker-compose run -p 3000:3000 app bin/rails s -b '0.0.0.0'
-        - watch -g docker ps -q --filter="NAME=youse_app_run"; docker exec -it $(docker ps -q --filter="NAME=youse_app_run") bash
+        - pane_with_multiple_commands:
+          - rm -f tmp/pids/server.pid
+          - docker-compose run -p 3000:3000 app bin/rails s -b '0.0.0.0'
+        - pane_with_multiple_commands:
+          - watch -g docker ps -q --filter="NAME=youse_app_run"
+          - docker exec -it $(docker ps -q --filter="NAME=youse_app_run") bash
+        -
