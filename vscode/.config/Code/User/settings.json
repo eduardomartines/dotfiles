@@ -5,9 +5,9 @@
 
     "explorer.sortOrder": "type",
 
-    "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true,
-    "files.insertFinalNewline": true,
+    //"files.trimTrailingWhitespace": true,
+    //"files.trimFinalNewlines": true,
+    //"files.insertFinalNewline": true,
 
     "window.zoomLevel": 0,
 
@@ -18,7 +18,7 @@
     "editor.fontFamily": "Iosevka",
     "editor.fontSize": 19,
     "editor.fontLigatures": true,
-    "editor.formatOnPaste": true,
+    //"editor.formatOnPaste": true,
     "editor.cursorStyle": "block",
     "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": true,
