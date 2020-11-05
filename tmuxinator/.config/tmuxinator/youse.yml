@@ -1,5 +1,5 @@
 name: youse
-root: ~/Projects/youse
+root: ~/projects/youse
 startup_window: 1
 startup_pane: 3
 on_project_stop: docker-compose down

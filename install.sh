@@ -148,8 +148,8 @@ wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=d
 sudo gdebi --non-interactive discord.deb
 
 # dotfiles
-mkdir ~/Projects
-cd ~/Projects
+mkdir ~/projects
+cd ~/projects
 git clone git@github.com:eduardomartines/dotfiles.git
 sudo apt-get install -y stow
 cd dotfiles
