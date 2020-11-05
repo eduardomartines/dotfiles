@@ -32,9 +32,9 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 rm -rf google-chrome-stable_current_amd64.deb
 # MANUAL STEPs:
-# 	* install LAST PASS plugin
-# 	* sign in and sync with Google Account
-#	* go to "chrome://settings/system" and make sure the following option is disabled "Use hardware acceleration when available" to prevent system crash
+#   * install LAST PASS plugin
+#   * sign in and sync with Google Account
+#   * go to "chrome://settings/system" and make sure the following option is disabled "Use hardware acceleration when available" to prevent system crash
 #   * go to "chrome://flags/#hardware-media-key-handling" and make sure the following option is disabled "Hardware Media Key Handling" to prevent issues with media keys
 #   * relaunch Chrome
 sudo apt purge -y firefox
@@ -69,8 +69,8 @@ sudo apt install -y docker-ce
 sudo usermod -aG docker ${USER}
 su - ${USER}
 # MANUAL STEPs:
-#	* login
-#	* test with com "docker run hello-world"
+#   * login
+#   * test with com "docker run hello-world"
 
 # docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -89,8 +89,7 @@ git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
 autoreconf --force --install && rm -rf build/ && mkdir -p build && cd build/ && ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers && make && sudo make install
 
-# polybar
-# https://github.com/polybar/polybar#building-from-source
+# polybar (https://github.com/polybar/polybar#building-from-source)
 sudo apt install -y cmake
 cd /tmp
 wget https://github.com/polybar/polybar/releases/download/3.4.3/polybar-3.4.3.tar
@@ -109,9 +108,6 @@ sudo apt-get install libjsoncpp-dev
 
 # rofi
 sudo apt install -y rofi
-
-# drivers (necessary?)
-# sudo ubuntu-drivers autoinstall
 
 # terminal
 cd /tmp
@@ -157,7 +153,7 @@ cd ~/Projects
 git clone git@github.com:eduardomartines/dotfiles.git
 sudo apt-get install -y stow
 cd dotfiles
-# WARNING: pay all attention here
+# WARNING: pay extra attention here
 #rm ~/.zshrc
 #rm ~/.oh-my-zsh/oh-my-zsh.sh
 ./setup.sh
@@ -207,6 +203,37 @@ curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update
 sudo apt-get install -y spotify-client
+
+# vpn
+sudo apt-get update
+sudo apt-get install -y network-manager-openvpn network-manager-openvpn-gnome
+# WARNING: pay extra attention here
+sudo rm -f /etc/resolv.conf
+cat << EOF | sudo tee /etc/NetworkManager/NetworkManager.conf
+[main]
+plugins=ifupdown,keyfile
+dns=default
+
+[ifupdown]
+managed=false
+
+[device]
+wifi.scan-rand-mac-address=no
+EOF
+sudo service NetworkManager restart
+
+# python 2
+sudo apt install -y python2
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+sudo update-alternatives --list python
+# sudo update-alternatives --config python
+
+# shopify themekit
+curl -s https://shopify.github.io/themekit/scripts/install.py | sudo python
+
+# bluetooth
+sudo apt-get install -y blueman
 
 # cleanup
 sudo apt autoremove -y
