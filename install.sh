@@ -38,6 +38,11 @@ rm -rf google-chrome-stable_current_amd64.deb
 #   * go to "chrome://flags/#hardware-media-key-handling" and make sure the following option is disabled "Hardware Media Key Handling" to prevent issues with media keys
 #   * relaunch Chrome
 sudo apt purge -y firefox
+sudo apt purge -y firefox-locale-en
+sudo rm -rf .mozilla
+sudo rm -rf /etc/firefox/
+sudo rm -rf /usr/lib/firefox/
+sudo rm -rf /usr/lib/firefox-addons/
 
 # ssh
 ssh-keygen
@@ -236,4 +241,4 @@ curl -s https://shopify.github.io/themekit/scripts/install.py | sudo python
 sudo apt-get install -y blueman
 
 # cleanup
-sudo apt autoremove -y
+sudo apt --purge autoremove -y
