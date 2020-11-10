@@ -44,20 +44,24 @@ sudo rm -rf /etc/firefox/
 sudo rm -rf /usr/lib/firefox/
 sudo rm -rf /usr/lib/firefox-addons/
 
+#
 # ssh
 ssh-keygen
 cat ~/.ssh/id_rsa.pub
 # MANUAL STEPs:
 #   * add ssh on Github (https://github.com/settings/keys) and Bitbucket
 
+#
 # some tools
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 
+#
 # git
 sudo apt install -y git
 git config --global user.email "martines.eduardo@gmail.com"
 git config --global user.name "Eduardo Martines"
 
+#
 # gitui
 cd /tmp
 wget https://github.com/extrawurst/gitui/releases/download/v0.10.1/gitui-linux-musl.tar.gz
@@ -65,6 +69,7 @@ mkdir gitui-musl
 tar -zxvf gitui-linux-musl.tar.gz -C gitui-musl
 sudo mv gitui-musl/gitui /usr/local/bin/
 
+#
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
@@ -77,16 +82,20 @@ su - ${USER}
 #   * login
 #   * test with com "docker run hello-world"
 
+#
 # docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+#
 # zsh
-sudo apt-get install -y zsh
+sudo apt install -y zsh
 
+#
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+#
 # i3gaps
 sudo apt install -y git libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
 cd /tmp
@@ -94,6 +103,7 @@ git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
 autoreconf --force --install && rm -rf build/ && mkdir -p build && cd build/ && ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers && make && sudo make install
 
+#
 # polybar (https://github.com/polybar/polybar#building-from-source)
 sudo apt install -y cmake
 cd /tmp
@@ -106,14 +116,16 @@ sudo apt install -y libxcb-ewmh-dev
 sudo apt install -y python3-xcbgen
 sudo apt install -y libsdl2-dev
 sudo apt install -y libcurl4-openssl-dev
-sudo apt-get install -y libmpdclient-dev
-sudo apt-get install libiw-dev
-sudo apt-get install libjsoncpp-dev
+sudo apt install -y libmpdclient-dev
+sudo apt install libiw-dev
+sudo apt install libjsoncpp-dev
 ./build.sh
 
+#
 # rofi
 sudo apt install -y rofi
 
+#
 # terminal
 cd /tmp
 git clone https://github.com/jwilm/alacritty
@@ -121,14 +133,15 @@ cd alacritty
 sudo apt install -y cargo
 cargo build --release
 sudo cp target/release/alacritty /usr/local/bin
-# launcher
 sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
 sudo desktop-file-install extra/linux/Alacritty.desktop
 sudo update-desktop-database
 
+#
 # tmux
 sudo apt install -y tmux
 
+#
 # visual studio Code
 sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add --
@@ -143,20 +156,23 @@ code --install-extension lourenci.go-to-spec
 code --install-extension kamikillerto.vscode-colorize
 code --install-extension fukatani.colorize-similar
 
+#
 # vim
 sudo apt install -y vim
 
+#
 # discord
 cd /tmp
 sudo apt install -y gdebi-core wget
 wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
 sudo gdebi --non-interactive discord.deb
 
+#
 # dotfiles
 mkdir ~/projects
 cd ~/projects
 git clone git@github.com:eduardomartines/dotfiles.git
-sudo apt-get install -y stow
+sudo apt install -y stow
 cd dotfiles
 # WARNING: pay extra attention here
 #rm ~/.zshrc
@@ -167,28 +183,35 @@ gnome-session-quit --no-prompt
 #   * change settings to i3
 #   * login
 
+#
 # nvm node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 nvm install v14.14.0
 
+#
 # yarn
 npm install -g yarn
 
+#
 # rbenv ruby
 sudo apt install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
 rbenv install 2.7.2
 rbenv global 2.7.2
 
+#
 # tmuxinator
 gem install tmuxinator
 
+#
 # python venv
 sudo apt install -y python3-venv
 
+#
 # firacode font
 sudo apt install -y fonts-firacode
 
+#
 # iosevka font
 cd /tmp
 wget https://github.com/be5invis/Iosevka/releases/download/v3.6.3/ttf-iosevka-3.6.3.zip
@@ -196,6 +219,7 @@ unzip ttf-iosevka-3.6.3.zip -d iosevka
 sudo mv iosevka/ttf /usr/local/share/fonts/iosevka
 sudo fc-cache -fv
 
+#
 # iosevka-term font
 cd /tmp
 wget https://github.com/be5invis/Iosevka/releases/download/v3.6.3/ttf-iosevka-term-3.6.3.zip
@@ -203,15 +227,17 @@ unzip ttf-iosevka-term-3.6.3.zip -d iosevka-term
 sudo mv iosevka-term/ttf /usr/local/share/fonts/iosevka-term
 sudo fc-cache -fv
 
+#
 # spotify
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update
-sudo apt-get install -y spotify-client
+sudo apt update
+sudo apt install -y spotify-client
 
+#
 # vpn
-sudo apt-get update
-sudo apt-get install -y network-manager-openvpn network-manager-openvpn-gnome
+sudo apt update
+sudo apt install -y network-manager-openvpn network-manager-openvpn-gnome
 # WARNING: pay extra attention here
 sudo rm -f /etc/resolv.conf
 cat << EOF | sudo tee /etc/NetworkManager/NetworkManager.conf
@@ -227,6 +253,7 @@ wifi.scan-rand-mac-address=no
 EOF
 sudo service NetworkManager restart
 
+#
 # python 2
 sudo apt install -y python2
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
@@ -234,11 +261,18 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 sudo update-alternatives --list python
 # sudo update-alternatives --config python
 
+#
 # shopify themekit
 curl -s https://shopify.github.io/themekit/scripts/install.py | sudo python
 
+#
 # bluetooth
-sudo apt-get install -y blueman
+sudo apt install -y blueman
 
+#
+# sound
+sudo apt install pavucontrol
+
+#
 # cleanup
 sudo apt --purge autoremove -y
