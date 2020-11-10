@@ -32,10 +32,11 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 rm -rf google-chrome-stable_current_amd64.deb
 # MANUAL STEPs:
-#   * install LAST PASS plugin
+#   * install LAST PASS plugin and make the account sync
 #   * sign in and sync with Google Account
 #   * go to "chrome://settings/system" and make sure the following option is disabled "Use hardware acceleration when available" to prevent system crash
 #   * go to "chrome://flags/#hardware-media-key-handling" and make sure the following option is disabled "Hardware Media Key Handling" to prevent issues with media keys
+#   * go to "chrome://flags/#enable-gpu-rasterization" and make sure the GPU Rasterization is disabled
 #   * relaunch Chrome
 sudo apt purge -y firefox
 sudo apt purge -y firefox-locale-en
