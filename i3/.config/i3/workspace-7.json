@@ -3,37 +3,14 @@
   "current_border_width": 2,
   "floating": "auto_off",
   "geometry": {
-    "height": 1883,
-    "width": 1076,
-    "x": 24,
-    "y": 57
-  },
-  "marks": [],
-  "name": "Personal",
-  "percent": 0.4,
-  "swallows": [
-    {
-      "class": "^Google\\-chrome$",
-      "instance": "^google\\-chrome$",
-      "title": "^Inbox (\\(\\d+\\) )?- martines\\.eduardo@gmail\\.com - Gmail - Google Chrome$",
-      "window_role": "^browser$"
-    }
-  ],
-  "type": "con"
-}
-{
-  "border": "pixel",
-  "current_border_width": 2,
-  "floating": "auto_off",
-  "geometry": {
-    "height": 1883,
-    "width": 1076,
-    "x": 14,
-    "y": 47
+    "height": 600,
+    "width": 800,
+    "x": 0,
+    "y": 0
   },
   "marks": [],
   "name": "Biz",
-  "percent": 0.6,
+  "percent": 1,
   "swallows": [
     {
       "class": "^Google\\-chrome$",
