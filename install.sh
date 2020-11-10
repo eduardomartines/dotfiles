@@ -54,7 +54,7 @@ cat ~/.ssh/id_rsa.pub
 
 #
 # some tools
-sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+sudo apt install -y apt-transport-https ca-certificates software-properties-common curl wget
 
 #
 # git
@@ -98,7 +98,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 #
 # i3gaps
-sudo apt install -y git libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
+sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
 cd /tmp
 git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
@@ -144,7 +144,6 @@ sudo apt install -y tmux
 
 #
 # visual studio Code
-sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add --
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
@@ -237,7 +236,6 @@ sudo apt install -y spotify-client
 
 #
 # vpn
-sudo apt update
 sudo apt install -y network-manager-openvpn network-manager-openvpn-gnome
 # WARNING: pay extra attention here
 sudo rm -f /etc/resolv.conf
@@ -272,7 +270,7 @@ sudo apt install -y blueman
 
 #
 # sound
-sudo apt install pavucontrol
+sudo apt install -y pavucontrol
 
 #
 # cleanup
