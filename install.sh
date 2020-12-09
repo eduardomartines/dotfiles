@@ -273,5 +273,27 @@ sudo apt install -y blueman
 sudo apt install -y pavucontrol
 
 #
+# OBS Studio + Virtual Camera (v4l2sink)
+sudo apt install -y v4l2loopback-dkms
+sudo modprobe v4l2loopback video_nr=10 card_label="OBS Video Source" exclusive_caps=1
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt update
+sudo apt install -y ffmpeg
+sudo apt install -y obs-studio
+sudo apt install -y qtbase5-dev
+sudo apt install -y libobs0
+sudo apt install -y libobs-dev
+cd /tmp
+git clone --recursive https://github.com/obsproject/obs-studio.git
+git clone https://github.com/CatxFish/obs-v4l2sink
+cd obs-v4l2sink
+mkdir build && cd build
+cmake -DLIBOBS_INCLUDE_DIR="../../obs-studio/libobs" -DCMAKE_INSTALL_PREFIX=/usr ..
+make -j4
+sudo make install
+mkdir -p ~/.config/obs-studio/plugins/v4l2sink/bin/64bit/
+sudo ln -s /usr/lib/x86_64-linux-gnu/obs-plugins/v4l2sink.so ~/.config/obs-studio/plugins/v4l2sink/bin/64bit/
+
+#
 # cleanup
 sudo apt --purge autoremove -y
