@@ -29,5 +29,6 @@
     "colorize.include": [
         "**/*.yml",
         "**/*.conf"
-    ]
+    ],
+    "workbench.activityBar.visible": true
 }

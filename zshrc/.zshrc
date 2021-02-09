@@ -75,6 +75,15 @@ export PATH="$PATH:$(yarn global bin)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 #
+# Android SDK
+#
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator:$PATH"
+export PATH="$PATH:$ANDROID_HOME/tools:$PATH"
+export PATH="$PATH:$ANDROID_HOME/tools/bin:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+
+#
 # aliases
 #
 alias zshconfig="${EDITOR} ~/.zshrc"

@@ -1,5 +1,5 @@
-name: youse
-root: ~/projects/youse
+name: example
+root: ~/projects/example
 startup_window: 1
 startup_pane: 3
 on_project_stop: docker-compose down
@@ -12,6 +12,6 @@ windows:
           - rm -f tmp/pids/server.pid
           - docker-compose run -p 3000:3000 app bin/rails s -b '0.0.0.0'
         - pane_with_multiple_commands:
-          - watch -g docker ps -q --filter="NAME=youse_app_run"
-          - docker exec -it $(docker ps -q --filter="NAME=youse_app_run") bash
+          - watch -g docker ps -q --filter="NAME=example_app_run"
+          - docker exec -it $(docker ps -q --filter="NAME=example_app_run") bash
         -

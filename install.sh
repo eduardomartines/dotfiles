@@ -105,6 +105,12 @@ cd i3-gaps
 autoreconf --force --install && rm -rf build/ && mkdir -p build && cd build/ && ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers && make && sudo make install
 
 #
+# handling i3 workspaces
+sudo apt install libanyevent-i3-perl
+# example:
+# sudo i3-save-tree --workspace 7 > ~/.config/i3/workspace-7.json
+
+#
 # polybar (https://github.com/polybar/polybar#building-from-source)
 sudo apt install -y cmake
 cd /tmp
@@ -155,6 +161,7 @@ code --install-extension akamud.vscode-theme-onelight
 code --install-extension lourenci.go-to-spec
 code --install-extension kamikillerto.vscode-colorize
 code --install-extension fukatani.colorize-similar
+code --install-extension alexkrechik.cucumberautocomplete
 
 #
 # vim
@@ -293,6 +300,10 @@ make -j4
 sudo make install
 mkdir -p ~/.config/obs-studio/plugins/v4l2sink/bin/64bit/
 sudo ln -s /usr/lib/x86_64-linux-gnu/obs-plugins/v4l2sink.so ~/.config/obs-studio/plugins/v4l2sink/bin/64bit/
+
+#
+#  SYS CTL max_user_watches
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 #
 # cleanup

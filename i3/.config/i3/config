@@ -97,8 +97,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Define outputs
-set $output-primary "DP-0"
-set $output-secondary "HDMI-0"
+set $output-primary "DP-4"
+set $output-secondary "DP-0"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -111,6 +111,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -122,6 +123,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 bindsym F1 workspace number $ws1
 bindsym F2 workspace number $ws2
@@ -132,6 +134,7 @@ bindsym F6 workspace number $ws6
 bindsym F7 workspace number $ws7
 bindsym F8 workspace number $ws8
 bindsym F9 workspace number $ws9
+bindsym F10 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -143,6 +146,7 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 workspace $ws1 output $output-primary
 workspace $ws2 output $output-primary
@@ -153,6 +157,7 @@ workspace $ws6 output $output-secondary
 workspace $ws7 output $output-secondary
 workspace $ws8 output $output-secondary
 workspace $ws9 output $output-secondary
+workspace $ws10 output $output-secondary
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -210,10 +215,10 @@ gaps outer 1
 
 exec_always --no-startup-id i3-msg "workspace $ws1; append_layout $HOME/.config/i3/workspace-1.json; exec code"
 exec_always --no-startup-id i3-msg "workspace $ws2; append_layout $HOME/.config/i3/workspace-2.json; exec alacritty -t GitUI"
-exec_always --no-startup-id i3-msg "workspace $ws3; append_layout $HOME/.config/i3/workspace-3.json; exec google-chrome --profile-directory='Default'"
+exec_always --no-startup-id i3-msg "workspace $ws3; append_layout $HOME/.config/i3/workspace-3.json; exec google-chrome --profile-directory='Default' --new-window ''"
 exec_always --no-startup-id i3-msg "workspace $ws6; append_layout $HOME/.config/i3/workspace-6.json; exec alacritty -t General -e tmux -f ~/.config/tmux/tmux.conf"
 exec_always --no-startup-id i3-msg "workspace $ws7; append_layout $HOME/.config/i3/workspace-7.json; exec google-chrome --profile-directory='Default'"
-exec_always --no-startup-id i3-msg "workspace $ws8; append_layout $HOME/.config/i3/workspace-8.json; exec google-chrome --profile-directory='Profile 2'"
+exec_always --no-startup-id i3-msg "workspace $ws8; append_layout $HOME/.config/i3/workspace-8.json; exec google-chrome --profile-directory='Profile 4'; exec discord"
 exec_always --no-startup-id i3-msg "workspace $ws9; append_layout $HOME/.config/i3/workspace-9.json; exec spotify"
 
 exec_always --no-startup-id i3-msg "workspace $ws6; workspace $ws1"
