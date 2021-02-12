@@ -27,10 +27,14 @@ sudo apt upgrade -y
 
 #
 # browser
-cd /tmp
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-rm -rf google-chrome-stable_current_amd64.deb
+sudo add-apt-repository ppa:xalt7x/chromium-deb-vaapi
+cat <<EOF | sudo tee /etc/apt/preferences.d/pin-xalt7x-chromium-deb-vaapi
+Package: *
+Pin: release o=LP-PPA-xalt7x-chromium-deb-vaapi
+Pin-Priority: 1337
+EOF
+sudo apt-get update
+sudo apt install chromium-browser chromium-codecs-ffmpeg
 # MANUAL STEPs:
 #   * install LAST PASS plugin and make the account sync
 #   * sign in and sync with Google Account
@@ -162,6 +166,7 @@ code --install-extension lourenci.go-to-spec
 code --install-extension kamikillerto.vscode-colorize
 code --install-extension fukatani.colorize-similar
 code --install-extension alexkrechik.cucumberautocomplete
+code --install-extension ms-vsliveshare.vsliveshare-pack
 
 #
 # vim
