@@ -38,7 +38,8 @@
   "swallows": [
     {
       "class": "^discord$",
-      "instance": "^discord$"
+      "instance": "^discord$",
+      "title": "^.* - Discord$"
     }
   ],
   "type": "con"

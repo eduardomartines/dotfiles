@@ -9,7 +9,7 @@
     //"files.trimFinalNewlines": true,
     //"files.insertFinalNewline": true,
 
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
 
     // "editor.letterSpacing": 0.2,
     // "editor.lineHeight": 24,
@@ -30,5 +30,8 @@
         "**/*.yml",
         "**/*.conf"
     ],
-    "workbench.activityBar.visible": true
+    "workbench.activityBar.visible": true,
+    "liveshare.authenticationProvider": "GitHub",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.compactFolders": false
 }

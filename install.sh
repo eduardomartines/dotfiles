@@ -34,7 +34,7 @@ Pin: release o=LP-PPA-xalt7x-chromium-deb-vaapi
 Pin-Priority: 1337
 EOF
 sudo apt-get update
-sudo apt install chromium-browser chromium-codecs-ffmpeg
+sudo apt install -y chromium-browser chromium-codecs-ffmpeg chromium-codecs-ffmpeg-extra
 # MANUAL STEPs:
 #   * install LAST PASS plugin and make the account sync
 #   * sign in and sync with Google Account
@@ -89,7 +89,7 @@ su - ${USER}
 
 #
 # docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 #
@@ -167,6 +167,8 @@ code --install-extension kamikillerto.vscode-colorize
 code --install-extension fukatani.colorize-similar
 code --install-extension alexkrechik.cucumberautocomplete
 code --install-extension ms-vsliveshare.vsliveshare-pack
+code --install-extension pavlitsky.yard
+code --install-extension mjmcloug.vscode-elixir
 
 #
 # vim
