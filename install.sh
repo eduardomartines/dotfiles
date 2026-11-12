@@ -20,6 +20,9 @@ curl -fsSL https://tern.build/install.sh | sh
 sudo snap install bitwarden
 # MANUAL STEPs:
 #   * log in and enable SSH Agent (Settings > Security)
+#   * import your SSH keys into Bitwarden (they are served by the agent socket
+#     wired in fish: SSH_AUTH_SOCK=~/snap/bitwarden/current/.bitwarden-ssh-agent.sock)
+#   * vault must be UNLOCKED for the agent to serve keys (git signing + pushes)
 #   * select the key you add to GitHub below
 
 #
