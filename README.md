@@ -4,27 +4,24 @@ Organizing dotfiles using [Stow](https://www.gnu.org/software/stow/).
 
 ## Details
 
-### CLI
+### Shell
 
-- [Zsh](https://github.com/zsh-users/zsh)
-- [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [Spaceship Prompt](https://github.com/denysdovhan/spaceship-prompt)
+- [Fish](https://fishshell.com/)
+	- [Tide](https://github.com/IlanCosman/tide)
+	- [Fisher](https://github.com/jorgebucaran/fisher)
 
-### UI Fonts
+### Terminal e agente
 
-- [Iosevka](https://github.com/be5invis/Iosevka)
-- [Iosevka Term](https://github.com/be5invis/Iosevka)
-- [Fira Code](https://github.com/tonsky/FiraCode)
-
-### UI Programs
-
-- [i3-gaps](https://github.com/Airblader/i3)
-	- [Polybar](https://github.com/polybar/polybar)
-- [Alacritty](https://github.com/jwilm/alacritty)
+- Tern (terminal)
+- omp (agente CLI, plugin [ponytail](https://github.com/DietrichGebert/ponytail))
 - [GitUi](https://github.com/extrawurst/gitui)
-- [VsCode](https://code.visualstudio.com/)
-- [Google Chrome](https://www.google.com/chrome/)
-	- [LastPass Plugin](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd?hl=pt)
+
+### Editor e ferramentas
+
+- [Zed](https://zed.dev/)
+- [mise](https://mise.jdx.dev/)
+
+> Setup antigo (i3, polybar, zsh, alacritty) disponível nas tags `initial-archlinux` e `ubuntu`.
 
 ## Usage
 

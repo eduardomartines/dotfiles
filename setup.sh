@@ -1,25 +1,18 @@
 #!/bin/bash
 
 base=(
-	zshrc
-	oh-my-zsh
-)
-
-system=(
-	i3
-	polybar
-	rofi
+	fish
+	tern
+	omp
 )
 
 code=(
-	alacritty
-	gemrc
-	vscode
-	tmux
-	tmuxinator
+	zed
+	mise
+	gitui
 )
 
-apps=( "${base[@]}" "${system[@]}" "${code[@]}" )
+apps=( "${base[@]}" "${code[@]}" )
 
 echo "Stowing apps for user: ${whoami}"
 echo ""

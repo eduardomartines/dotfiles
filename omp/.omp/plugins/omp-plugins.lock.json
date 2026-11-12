@@ -1,0 +1,10 @@
+{
+  "plugins": {
+    "@dietrichgebert/ponytail": {
+      "version": "5.3.3",
+      "enabledFeatures": null,
+      "enabled": true
+    }
+  },
+  "settings": {}
+}

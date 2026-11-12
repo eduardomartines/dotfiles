@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "plugins": {
+    "ponytail@ponytail": [
+      {
+        "scope": "user",
+        "installPath": "/home/emartines/.omp/plugins/cache/plugins/ponytail___ponytail___5.3.3",
+        "version": "5.3.3",
+        "installedAt": "2026-11-11T19:37:30.791Z",
+        "lastUpdated": "2026-11-11T19:37:30.791Z"
+      }
+    ]
+  }
+}

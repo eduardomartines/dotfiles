@@ -1,0 +1,5 @@
+[tools]
+bun = "1"
+gitui = "latest"
+node = "lts"
+"npm:@bitwarden/cli" = "latest"

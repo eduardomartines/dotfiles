@@ -1,0 +1,13 @@
+{
+  "copy_on_select": true,
+  "pointer_shape": "arrow",
+  "layout": "Rail",
+  "tabs": "Vertical",
+  "material": "Glass",
+  "opacity": 100,
+  "blur": 100,
+  "density": "Islands",
+  "shell": "/usr/bin/fish",
+  "start_folder": "~/Projects/",
+  "msaa": "8x"
+}
