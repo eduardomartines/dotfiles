@@ -12,13 +12,15 @@ code=(
 	gitui
 )
 
-apps=( "${base[@]}" "${code[@]}" )
+configs=(
+	git
+	ssh
+)
+
+apps=( "${base[@]}" "${code[@]}" "${configs[@]}" )
 
 echo "Stowing apps for user: ${whoami}"
 echo ""
-
-git submodule init
-git submodule update
 
 for app in ${apps[@]}; do
 	stow -v -R -t ${HOME} $app

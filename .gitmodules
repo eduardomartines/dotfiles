@@ -1,9 +1,0 @@
-[submodule "oh-my-zsh/.oh-my-zsh/custom/themes/spaceship-prompt"]
-	path = oh-my-zsh/.oh-my-zsh/custom/themes/spaceship-prompt
-	url = https://github.com/denysdovhan/spaceship-prompt.git
-[submodule "oh-my-zsh/.oh-my-zsh/custom/themes/powerlevel10k"]
-	path = oh-my-zsh/.oh-my-zsh/custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
-[submodule "tmux/.config/tmux/plugins/tpm"]
-	path = tmux/.config/tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm

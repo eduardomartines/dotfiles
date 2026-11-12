@@ -1,8 +1,0 @@
-configuration {
-    lines: 12;
-    font: "Source Sans Pro 12";
-    show-icons: true;
-    theme: "dracula";
-    display-window: "Window";
-    display-drun: "Search";
-}

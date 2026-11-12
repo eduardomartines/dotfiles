@@ -7,21 +7,27 @@ Organizing dotfiles using [Stow](https://www.gnu.org/software/stow/).
 ### Shell
 
 - [Fish](https://fishshell.com/)
-	- [Tide](https://github.com/IlanCosman/tide)
-	- [Fisher](https://github.com/jorgebucaran/fisher)
+	- [Tide](https://github.com/IlanCosman/tide) e [Fisher](https://github.com/jorgebucaran/fisher) (instalados no primeiro start via `fish_plugins`)
 
 ### Terminal e agente
 
-- Tern (terminal)
-- omp (agente CLI, plugin [ponytail](https://github.com/DietrichGebert/ponytail))
-- [GitUi](https://github.com/extrawurst/gitui)
+- [Tern](https://tern.build/) (terminal — também instala e atualiza o [omp](https://github.com/can1357/oh-my-pi))
+	- MCP: chrome-devtools (`omp/.omp/agent/mcp.json`)
+	- plugin [ponytail](https://github.com/DietrichGebert/ponytail) (`omp/.omp/plugins/`)
 
 ### Editor e ferramentas
 
 - [Zed](https://zed.dev/)
-- [mise](https://mise.jdx.dev/)
+- [mise](https://mise.jdx.dev/) — bun, node, gitui, Bitwarden CLI
+- [Bitwarden](https://bitwarden.com/) (snap; o agente SSH é usado pelo fish/ssh)
+- `gh` (credenciais git do GitHub)
 
-> Setup antigo (i3, polybar, zsh, alacritty) disponível nas tags `initial-archlinux` e `ubuntu`.
+### Git e SSH
+
+- `git/` e `ssh/` são stow packages.
+- **Nada sensível versionado**: identidade (`user.name`, `email`, `signingkey`) fica em `~/.gitconfig.local` e hosts/identidades SSH em `~/.ssh/config.local` — ambos carregados via `include` e nunca commitados.
+
+> Setup antigo (i3, polybar, zsh, alacritty, tmux, vscode...) disponível nas tags `initial-archlinux` e `ubuntu`.
 
 ## Usage
 
