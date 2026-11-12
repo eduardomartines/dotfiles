@@ -13,7 +13,9 @@ Organizing dotfiles using [Stow](https://www.gnu.org/software/stow/).
 
 - [Tern](https://tern.build/) (terminal — also installs and keeps [omp](https://github.com/can1357/oh-my-pi) updated)
 	- MCP: chrome-devtools (`omp/.omp/agent/mcp.json`)
-	- plugin [ponytail](https://github.com/DietrichGebert/ponytail) (`omp/.omp/plugins/`)
+	- agent config: model roles (`omp/.omp/agent/config.yml`)
+	- [ponytail](https://github.com/DietrichGebert/ponytail) plugin — state not tracked (churns, may hold plugin secrets); restore with:
+	  `omp plugin marketplace add DietrichGebert/ponytail && omp plugin install ponytail@ponytail`
 
 ### Editor and tools
 

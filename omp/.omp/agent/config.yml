@@ -1,0 +1,5 @@
+setupVersion: 3
+modelRoles:
+  default: zai-headroom/glm-5.3-flash:low
+dev:
+  autoqaConsent: denied

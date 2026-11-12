@@ -52,4 +52,8 @@ cd ~/Projects/dotfiles
 ./setup.sh
 # MANUAL STEPs:
 #   * ~/.ssh/config already exists? merge ssh/.ssh/config into it
-#   * omp plugin doctor   (ponytail plugin restores from the tracked lock)
+#   * omp plugin state is not tracked (it churns and can hold plugin secrets);
+#     restore the ponytail plugin:
+#       omp plugin marketplace add DietrichGebert/ponytail
+#       omp plugin install ponytail@ponytail
+#   * existing machine (real config files, not links)? setup.sh --adopt takes them over

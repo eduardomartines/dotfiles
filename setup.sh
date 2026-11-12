@@ -23,7 +23,10 @@ echo "Stowing apps for user: ${whoami}"
 echo ""
 
 for app in ${apps[@]}; do
-	stow -v -R -t ${HOME} $app
+	# --no-folding: link files individually so runtime state (omp dbs, fish vars)
+	# is written next to the links, never inside this repo.
+	# --adopt: on machines with existing real configs, take them over instead of conflicting.
+	stow -v -R --no-folding --adopt -t ${HOME} $app
 done
 
 echo ""
