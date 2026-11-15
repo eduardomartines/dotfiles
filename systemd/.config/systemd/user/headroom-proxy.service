@@ -1,0 +1,11 @@
+[Unit]
+Description=Headroom optimization proxy (Z.AI upstream)
+After=network-online.target
+
+[Service]
+ExecStart=/home/emartines/.local/bin/headroom proxy --port 8787 --anthropic-api-url https://api.z.ai/api/anthropic --openai-api-url https://api.z.ai/api/coding/paas/v4 --no-telemetry
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

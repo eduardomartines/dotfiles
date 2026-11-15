@@ -15,6 +15,7 @@ code=(
 configs=(
 	git
 	ssh
+	systemd
 )
 
 apps=( "${base[@]}" "${code[@]}" "${configs[@]}" )

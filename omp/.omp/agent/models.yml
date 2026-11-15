@@ -1,0 +1,9 @@
+providers:
+  zai:
+    baseUrl: http://127.0.0.1:8787
+    headers:
+      X-Headroom-Base-Url: https://api.z.ai/api/coding/paas/v4
+      X-Headroom-Original-Path: /chat/completions
+
+  openai-codex:
+    baseUrl: http://127.0.0.1:8787/v1
