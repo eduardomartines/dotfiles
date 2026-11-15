@@ -27,6 +27,7 @@ tern/.config/tern/account.lock
 tern/.config/tern/plugins/
 
 # never commit identities or secrets
+.codex/auth.json
 git/.gitconfig.local
 ssh/.ssh/config.local
 ssh/.ssh/allowed_signers
