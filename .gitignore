@@ -16,7 +16,8 @@ omp/.omp/agent/*.db-wal
 omp/.omp/agent/.env
 omp/.omp/agent/blobs/
 omp/.omp/agent/cache/
-omp/.omp/agent/extensions/
+omp/.omp/agent/extensions/*
+!omp/.omp/agent/extensions/model-switch.ts
 omp/.omp/agent/last-changelog-version
 
 # fish universal vars — machine state (tide cache, timestamps)
